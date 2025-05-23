@@ -1,0 +1,632 @@
+/* Importa una fuente de Google Fonts (opcional) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #3498db; /* Azul vibrante */
+    --secondary-color: #2c3e50; /* Azul oscuro casi negro */
+    --accent-color: #e74c3c; /* Rojo para acentos */
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #2c3e50; /* Este es el color de fondo para la sección de contacto y educación */
+    --white: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg); /* Mantén esto si quieres un fondo general claro */
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Encabezado (Header) --- */
+header {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Asegura que la nav no sea más ancha que el container */
+    margin: 0 auto; /* Centra la nav dentro del header */
+    padding: 0 20px; /* Padding para evitar que el contenido toque los bordes */
+}
+
+header .logo a {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+header nav ul.nav-links { /* Asegúrate de que apunte a .nav-links */
+    list-style: none;
+    display: flex;
+}
+
+header nav ul.nav-links li {
+    margin-left: 30px;
+}
+
+header nav ul.nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+header nav ul.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en desktop */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--white);
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación del menú de hamburguesa */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* --- Secciones Generales --- */
+section {
+    padding: 100px 0 50px 0; /* Espacio para el header fijo */
+    text-align: center;
+    /* Aplica el color a todas las secciones */
+    background-color: var(--secondary-color); /* Color de fondo */
+    color: var(--white); /* Color del texto para contrastar */
+}
+
+h1, h2 {
+    color: var(--white); /* Cambia el color del título para contrastar */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8); /* Ajusta el color del párrafo para contraste */
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+.button:hover {
+    background-color: #2980b9; /* Un tono más oscuro */
+    transform: translateY(-2px);
+}
+
+.button-small {
+    background-color: var(--primary-color); 
+    color: var(--white); 
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.button-small:hover {
+    background-color: #2980b9; 
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg') no-repeat center center/cover; /* Agrega una imagen de fondo aquí */
+    color: var(--white);
+    height: 100vh; /* Altura completa de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 0; /* Elimina padding superior extra */
+    /* Aquí puedes mantener el background si deseas una imagen de fondo o puedes simplemente dejar el color de la sección */
+    background-color: var(--secondary-color); /* Asegura que tenga el color si no hay imagen */
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- About Section --- */
+.about-section {
+    background-color: var(--secondary-color); /* Cambiado a secondary-color */
+    padding: 80px 0;
+    color: var(--white); /* Ajusta el color del texto para contrastar */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.about-content img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--box-shadow);
+}
+
+.about-content p {
+    max-width: 600px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8); /* Ajusta el color del párrafo para contraste */
+}
+
+/* --- Education and Certs Section --- */
+.education-certs-section {
+    background-color: var(--secondary-color); /* Cambiado a secondary-color */
+    padding: 80px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+.education-certs-section h2 {
+    color: var(--white);
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cert-item {
+    background-color: #262a32; /* Mantén este color ligeramente diferente para los ítems */
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-5px);
+    background-color: #31363e;
+}
+
+.cert-item .icon-wrapper {
+    margin-bottom: 20px;
+}
+
+.cert-item .icon-wrapper .fas {
+    font-size: 3em;
+    color: var(--primary-color);
+}
+
+.cert-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.cert-item p {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+}
+
+.cert-item .dates {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+}
+
+/* Media queries para responsividad (Educación y Certificados) */
+@media (max-width: 768px) {
+    .certs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-item {
+        padding: 25px;
+    }
+}
+
+/* --- Contact Section (New Style) --- */
+.contact-section {
+    background-color: var(--secondary-color); /* Cambiado a secondary-color */
+    padding: 80px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: var(--white);
+}
+
+.contact-intro-text {
+    max-width: 700px;
+    margin: 20px auto 40px auto;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-list {
+    display: grid;
+    /* Columnas más flexibles y que favorecen el wrap de texto en anchos intermedios */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 2000px; /* Ajusta el ancho máximo del contenedor del grid si es necesario */
+    margin: 0 auto;
+    align-items: stretch; /* Asegura que las tarjetas se estiren a la misma altura */
+    /* Definimos las áreas de grid para controlar el posicionamiento específico */
+    grid-template-areas:
+        "email linkedin github"
+        ". ubicacion ."; /* Posiciona Ubicación en la segunda columna de la segunda fila */
+}
+
+/* Asigna cada tarjeta a su área de grid */
+/* Asegúrate de que el orden en tu HTML coincida con esto: Email, LinkedIn, GitHub, Ubicación */
+.contact-item:nth-child(1) { /* Email */
+    grid-area: email;
+}
+
+.contact-item:nth-child(2) { /* LinkedIn */
+    grid-area: linkedin;
+}
+
+.contact-item:nth-child(3) { /* GitHub */
+    grid-area: github;
+}
+
+/* Y para la tarjeta de Ubicación, solo necesitas esto: */
+.contact-item:nth-child(4) { /* Ubicación */
+    grid-area: ubicacion;
+    /* No necesitas justify-self: center; ni align-self: center; si ocupa toda la fila, ya que se estirará */
+}
+
+.contact-item {
+    background-color: #262a32; /* Mantén este color ligeramente diferente para los ítems */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Mantenemos overflow hidden en la tarjeta principal para los bordes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 250px; /* Aumentamos ligeramente la altura mínima de las tarjetas */
+    padding: 30px; /* Mantenemos este padding para espacio interno */
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    background-color: #31363e;
+}
+
+/* Estilos para el enlace que cubre toda la tarjeta */
+.contact-item .contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    position: static; /* Crucial para que el contenido fluya normalmente */
+    padding: 0; /* Eliminamos el padding aquí ya que lo tenemos en .contact-item */
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    justify-content: center;
+    overflow: visible; /* ¡Crucial! Permitir que el contenido del enlace se desborde si es necesario */
+    white-space: normal; /* Permitir que el texto se envuelva */
+    text-align: left; /* Asegurar que el texto esté alineado a la izquierda */
+}
+
+/* Reglas para eliminar el outline y border al enfocar o activar el enlace */
+.contact-item .contact-link:focus,
+.contact-item .contact-link:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Estilos para el ícono dentro de la tarjeta */
+.contact-item .icon-wrapper {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+}
+
+.contact-item .icon-wrapper .fas,
+.contact-item .icon-wrapper .fab {
+    font-size: 3em;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* Estilos para el texto dentro de la tarjeta */
+.contact-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+    color: var(--white);
+    text-align: left;
+    transition: color 0.3s ease;
+    width: 100%;
+    /* No usar overflow: hidden y text-overflow: ellipsis aquí para el texto principal del correo/github */
+    white-space: nowrap; /* Títulos cortos se mantendrán en una línea */
+}
+
+.contact-item p {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: left;
+    transition: color 0.3s ease;
+    width: 100%;
+    margin-bottom: 0;
+    /* ¡CLAVE para el email y GitHub! */
+    word-break: break-all; /* Fuerza el salto de línea en cualquier punto de la palabra si es necesario */
+    overflow-wrap: break-word; /* Asegura que el texto se envuelva en el espacio disponible */
+    white-space: normal; /* Permite que el párrafo se ajuste a la siguiente línea */
+    min-width: 0; /* Es importante para la flexibilidad del grid */
+}
+
+/* Solución específica y más agresiva para el email y GitHub para evitar el corte */
+.contact-item p.email-address,
+.contact-item p.github-link {
+    word-break: break-all; /* Prioridad alta para romper palabras */
+    white-space: normal; /* Permitir wrap normal del texto */
+    overflow: visible; /* Asegura que el texto no se oculte si se desborda */
+    text-overflow: clip; /* Asegura que no se añadan puntos suspensivos */
+    min-width: 0; /* Importante para el encogimiento del contenido dentro del flex/grid */
+}
+
+/* Efectos de hover para el texto y los íconos */
+.contact-item .contact-link:hover h3,
+.contact-item:not(.contact-link):hover h3 {
+    color: var(--primary-color);
+}
+
+.contact-item .contact-link:hover p,
+.contact-item:not(.contact-link):hover p {
+    color: var(--primary-color);
+}
+
+.contact-item .contact-link:hover .icon-wrapper .fas,
+.contact-item .contact-link:hover .icon-wrapper .fab,
+.contact-item:not(.contact-link):hover .icon-wrapper .fas {
+    color: var(--primary-color);
+}
+
+/* Estilos específicos para la tarjeta de Ubicación que NO es un enlace */
+.contact-item:not(.contact-link) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px; /* Mismo padding que las tarjetas con enlace */
+    box-sizing: border-box;
+    min-height: 250px; /* Misma altura mínima */
+}
+
+.contact-item:not(.contact-link) .icon-wrapper {
+    margin-bottom: 10px;
+}
+
+.contact-item:not(.contact-link) h3,
+.contact-item:not(.contact-link) p {
+    text-align: left; /* Alinear el texto a la izquierda en la tarjeta de Ubicación también */
+    word-break: normal; /* No necesitamos forzar la ruptura de palabras para "Disponible remoto" */
+    white-space: normal;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 992px) { /* Ajuste el breakpoint para tabletas si es necesario */
+    .contact-list {
+        /* Para tabletas, dos columnas es un buen balance */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-areas: none; /* Deshabilita las áreas de grid para permitir el flujo automático */
+        padding: 0 15px;
+    }
+    .contact-item:nth-child(4) { /* Ubicación */
+        grid-column: auto; /* Restablece la columna para que fluya normalmente */
+        justify-self: auto; /* Restablece el centrado */
+        align-self: auto; /* Restablece la alineación vertical */
+    }
+}
+
+
+@media (max-width: 768px) {
+    header nav ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--secondary-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: var(--box-shadow);
+    }
+
+    header nav ul.nav-links.active {
+        display: flex;
+    }
+
+    header nav ul.nav-links li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content img {
+        margin-bottom: 20px;
+    }
+
+    /* Media queries para la sección de contacto en móvil */
+    .contact-list {
+        /* Vuelve a una sola columna en móvil */
+        grid-template-columns: 1fr;
+        grid-template-areas: none; /* Deshabilita las áreas de grid para móvil */
+        padding: 0 15px;
+    }
+    .contact-item {
+        min-height: auto; /* Altura mínima flexible en móvil */
+        align-items: flex-start;
+        padding: 25px; /* Aumentamos el padding para móvil también */
+        justify-content: flex-start;
+    }
+    .contact-item .contact-link {
+        position: static;
+        padding: 0;
+        gap: 10px;
+        overflow: visible; /* Permitimos el overflow para que el texto se ajuste a varias líneas */
+        text-overflow: clip; /* No queremos ellipsis en móvil si el texto se ajusta */
+        white-space: normal; /* El texto puede envolverse */
+    }
+
+    /* Ajustes específicos para la tarjeta de Ubicación en móvil */
+    .contact-item:not(.contact-link) {
+        align-items: flex-start;
+        padding: 25px; /* Mismo padding que las tarjetas con enlace en móvil */
+        justify-content: flex-start;
+    }
+    .contact-item:not(.contact-link) .icon-wrapper {
+        margin-bottom: 10px;
+    }
+    .contact-item:not(.contact-link) h3 {
+        white-space: normal; /* Permitir que el título se ajuste a varias líneas en móvil */
+    }
+
+    .contact-intro-text {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}

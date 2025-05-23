@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Mauricio Canales</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="#hero">Mi Portafolio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#education-certs">Formación</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Hola, soy Jorge Mauricio Canales Alvarez</h1>
+                <p>Soy un ingeniero de datos apasionado por crear experiencias digitales increíbles.</p>
+                <a href="#contact" class="button">Contáctame</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Sobre Mí</h2>
+                <div class="about-content">
+                    <img src="images/IMG_20230401_185623978.jpg" alt="Tu Foto">
+                    <div>
+                        <p>¡Bienvenido/a a mi portafolio! Soy Mauricio, y me especializo en ingeniería de datos, SQL avanzado y análisis de datos en entornos de producción. Siempre estoy buscando aprender nuevas tecnologías como AWS, Docker y herramientas de Big Data para seguir creciendo profesionalmente.</p>
+                        <p>Tengo experiencia en: <strong>PostgreSQL, SQL, Python, AWS, Docker, ETL, análisis de datos, modelado de datos, funciones almacenadas, Visual Studio Code, Git, y diseño de soluciones de datos escalables</strong>.</p>
+                        <a href="cv.pdf" class="button button-small" download>Descargar CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education-certs" class="education-certs-section">
+            <div class="container">
+                <h2>Formación</h2>
+                <div class="certs-grid">
+                    <div class="cert-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Ingeniería de sistemas</h3>
+                        <p>Universidad Peruana de Ciencias Aplicadas</p>
+                        <p class="dates">2019 - 2024</p>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Ingeniero de Datos</h3>
+                        <p>Platzi</p>
+                        <p class="dates">2024 - 2025</p>
+                        <p>Un año de formación intensiva en ingeniería de datos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Información de contacto</h2>
+                <p class="contact-intro-text">
+                    Si estás interesado en trabajar juntos o simplemente quieres hacer una consulta, no dudes en ponerte en contacto conmigo a través de cualquiera de estos medios.
+                </p>
+
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <a href="mailto:mauricio.canales.alvarez@hotmail.com" class="contact-link">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3>Email</h3>
+                                <p class="email-address">mauricio.canales.alvarez@hotmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="https://www.linkedin.com/in/jorge-mauricio-canales-alvarez-80b200245/" target="_blank" class="contact-link">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <p>linkedin.com/in/jorge-mauricio-canales-alvarez</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="https://github.com/mauriciofh123" target="_blank" class="contact-link">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h3>GitHub</h3>
+                                <p>github.com/mauriciofh123</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Disponible remoto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mauricio Canales. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        // Este es el JavaScript para el menú de hamburguesa que estaba en el CSS.
+        // Es mejor moverlo aquí al final del body o en un archivo JS separado.
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            // Cerrar el menú al hacer clic en un enlace (para móviles)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
